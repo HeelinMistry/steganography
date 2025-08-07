@@ -1,0 +1,4 @@
+pillow
+cryptography
+numpy
+scipy
