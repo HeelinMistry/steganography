@@ -8,23 +8,31 @@ from steganalysis.rs_analysis import rs_analysis
 # 1. Load the image
 carrier_img = load_image('data/example.png')
 
+# Read the image you want to hide
+with open("data/secret.txt", "rb") as f:
+    secret_bytes = f.read()
+
 # 2. Encrypt the message
-key = generate_key()
-message = "This is a top secret message."
-encrypted = encrypt_message(message, key)
+# key = generate_key()
+# message = "This is a top secret message."
+# encrypted = encrypt_message(message, key)
 
 # 3. Encode it
 stego = LSBImageSteganography()
-encoded_img = stego.encode(carrier_img, encrypted)
+encoded_img = stego.encode(carrier_img, secret_bytes)
 save_image(encoded_img, 'output/encoded.png')
 
 # 4. Decode it
 loaded_stego_img = load_image('output/encoded.png')
 extracted = stego.decode(loaded_stego_img)
 
+# Save recovered hidden image
+with open("output/recovered_secret.txt", "wb") as f:
+    f.write(extracted)
 # 5. Decrypt
-decrypted = decrypt_message(extracted, key)
-print("Recovered message:", decrypted)
+# decrypted = decrypt_message(extracted, key)
+# print("Recovered message:", decrypted)
+
 
 print("\nComparing original and stego image...")
 compare_images(carrier_img, encoded_img, show_diff=False, diff_output_path="output/diff.png")
