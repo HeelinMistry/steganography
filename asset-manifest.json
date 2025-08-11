@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/steganography/static/css/main.e6c13ad2.css",
+    "main.js": "/steganography/static/js/main.2ca6a245.js",
+    "static/js/453.670e15c7.chunk.js": "/steganography/static/js/453.670e15c7.chunk.js",
+    "index.html": "/steganography/index.html",
+    "main.e6c13ad2.css.map": "/steganography/static/css/main.e6c13ad2.css.map",
+    "main.2ca6a245.js.map": "/steganography/static/js/main.2ca6a245.js.map",
+    "453.670e15c7.chunk.js.map": "/steganography/static/js/453.670e15c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.2ca6a245.js"
+  ]
+}
